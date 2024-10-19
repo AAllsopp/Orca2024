@@ -32,7 +32,10 @@ public class character : MonoBehaviour
         }
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         //move = transform.TransformDirection(move);
+        
         charController.Move(move*Time.deltaTime* Speed);
+
+       // moveDirection = transform.TransformDirection(Vector3.forward)*moveSpeed;
 
         if(move != Vector3.zero){
             gameObject.transform.forward = move;
