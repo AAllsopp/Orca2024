@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-[RequireComponent(typeof(Rigidbody))]
 
 public class character : MonoBehaviour
 {   
@@ -32,6 +31,7 @@ public class character : MonoBehaviour
 
         }
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+        //move = transform.TransformDirection(move);
         charController.Move(move*Time.deltaTime* Speed);
 
         if(move != Vector3.zero){
@@ -57,7 +57,7 @@ public class character : MonoBehaviour
         // get an attribute for size of collision 
         //Vector3 size = FindFirstObjectByType<planetFood>().giveSize();
       
-
+        
         if(hit.gameObject.CompareTag("Food")){
             Vector3 foodSize = hit.collider.bounds.size;
             if(playerSize.x >= foodSize.x){
@@ -70,7 +70,10 @@ public class character : MonoBehaviour
             }
 
         }
-       
+        else if(hit.gameObject.CompareTag("Ground")){
+            return;
+        }
+        
 
         //float jumpOverlap;
        // if (playerSize >= 2) {
