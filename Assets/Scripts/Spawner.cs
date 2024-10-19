@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject mySphere;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void SpawnSphere() {
+        int spawnPointX = Random.Range(-10, 10);
+        int spawnPointY = Random.Range(10, 20);
+        int spawnPointZ = Random.Range(-10, 10);
+
+        Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ);
+
+        Instantiate(mySphere, spawnPosition, Quaternion.identity);
     }
 }
