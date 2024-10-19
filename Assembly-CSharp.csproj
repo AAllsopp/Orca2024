@@ -66,6 +66,8 @@
   <ItemGroup>
     <Compile Include="Assets/Scripts/PipeMoveScript.cs" />
     <Compile Include="Assets/Scripts/MattsTestScript.cs" />
+    <Compile Include="Assets/Scripts/PipeSpawnScript.cs" />
+    <Compile Include="Assets/Scripts/character.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

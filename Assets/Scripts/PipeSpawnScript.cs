@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class PipeMoveScript : MonoBehaviour
+public class PipeSpawnScript : MonoBehaviour
 {
+    public GameObject pipe;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Instantiate(pipe, transform.position, transform.rotation);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(-2, 0, 0) * Time.deltaTime;
+        
     }
 }
