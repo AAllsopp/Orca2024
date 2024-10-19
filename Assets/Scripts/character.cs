@@ -11,6 +11,9 @@ public class character : MonoBehaviour
     private float jumpHeight = 1.0f;
     private float gravityValue = -9.81f;
     private Vector3 playerSize = new Vector3 (1,1,1);
+    private float rotationSpeed = 270f;
+    private Vector3 rotation;
+    private Vector3 ScaleSize = new Vector3(0.1f, 0.1f, 0.1f);
 
 
 
@@ -24,68 +27,40 @@ public class character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerGround = charController.isGrounded;
+        this.rotation = new Vector3(0, Input.GetAxis("Horizontal")*rotationSpeed*Time.deltaTime, 0);
+        Vector3 move = new Vector3(0,0, Input.GetAxis("Vertical")*Time.deltaTime);
+        move = this.transform.TransformDirection(move);
+        charController.Move(move*Speed);
+        this.transform.Rotate(this.rotation);
 
-        if (playerGround && playerVel.y <0){
-            playerVel.y = 0f;
-
-        }
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        //move = transform.TransformDirection(move);
-        
-        charController.Move(move*Time.deltaTime* Speed);
-
-       // moveDirection = transform.TransformDirection(Vector3.forward)*moveSpeed;
-
-        if(move != Vector3.zero){
-            gameObject.transform.forward = move;
-        }
-
-        if(Input.GetButtonDown("Jump") && playerGround){
-            playerVel.y += Mathf.Sqrt(jumpHeight * -3.0f *gravityValue);
-        }
-        playerVel.y += gravityValue*Time.deltaTime;
-        charController.Move(playerVel*Time.deltaTime);
     }
 
-    
+        void OnControllerColliderHit(ControllerColliderHit hit){
 
-    // ?? is this the correct ControllerColliderHit 
-    void OnControllerColliderHit(ControllerColliderHit hit){
 
-       // Rigidbody food = hit.collider.attachedRigidBody;
-       // if(food == null){
-         //   return;
-       // }
-        // get an attribute for size of collision 
-        //Vector3 size = FindFirstObjectByType<planetFood>().giveSize();
-      
-        
         if(hit.gameObject.CompareTag("Food")){
             Vector3 foodSize = hit.collider.bounds.size;
             if(playerSize.x >= foodSize.x){
                 
-                playerSize.x += foodSize.x;
-                playerSize.y += foodSize.y;
-                playerSize.z += foodSize.z;
+                Vector3 newSize = vectorScale(foodSize, 0.1f);
+                gameObject.transform.localScale += newSize;
+                
+               // playerSize.x += foodSize.x;
+               // playerSize.y += foodSize.y;
+               // playerSize.z += foodSize.z;
                 Destroy(hit.gameObject);
                 
             }
 
         }
-        else if(hit.gameObject.CompareTag("Ground")){
-            return;
-        }
         
+    }
+    Vector3 vectorScale(Vector3 curSize, float multiplier){
+        curSize.x *= multiplier;
+        curSize.y *= multiplier;
+        curSize.z *= multiplier;
 
-        //float jumpOverlap;
-       // if (playerSize >= 2) {
-            // If player is not small, they can jump on the mushroom
-            //jumpOverlap = Physics.OverlapSphere(jumpCheckPos.position, 0.05f, LayerMask.GetMask("Ground", "ShroomBounce")).Length;
-       // } else {
-         //   // If the player is small, they cannot jump on the mushroom
-         //   jumpOverlap = Physics.OverlapSphere(jumpCheckPos.position, 0.05f, LayerMask.GetMask("Ground")).Length;
-        //}
-        
+        return curSize;
+
     }
 }
