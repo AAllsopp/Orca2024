@@ -1,5 +1,4 @@
-library\
-temp/
-tmp/
-*.log
-/Library
+Temp/
+ttmp/
+Library/
+Logs/
