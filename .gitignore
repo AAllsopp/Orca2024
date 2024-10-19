@@ -1,5 +1,4 @@
-temp/
-tmp/
-library/
-logs/
-*.log
+Temp/
+ttmp/
+Library/
+Logs/
