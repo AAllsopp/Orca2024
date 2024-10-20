@@ -17,6 +17,7 @@ public class character : MonoBehaviour
     // public CinemachineCamera cinemachineCamera;
     public CinemachineOrbitalFollow cinemachineCamera;
     public Spawner spawnerScript;
+    public float time = 5.0f;
 
 
 
@@ -64,6 +65,10 @@ public class character : MonoBehaviour
                 if(playerSize.x >= foodSize.x){
                     Vector3 newSize = vectorScale(foodSize, 0.1f);
                     gameObject.transform.localScale += newSize;
+                    if (playerSize.x <= 1.9999 && playerSize.x + newSize.x >= 1.9999) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
                     playerSize += newSize;
                     
                     Destroy(hit.gameObject);
@@ -78,6 +83,10 @@ public class character : MonoBehaviour
                 }
 
             }
+    }
+    
+    void stopText(){
+        FindFirstObjectByType<TextIndicator>().removeText();
     }
 
     void UpdateCameraOrbit(float size)
