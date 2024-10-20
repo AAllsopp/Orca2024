@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Unlit_BlackHole
-  m_Shader: {fileID: 4800000, guid: 06226f4b56ec0f9749307593f702f628, type: 3}
+  m_Name: RainbowM
+  m_Shader: {fileID: 4800000, guid: 0ce2fe825a75071b0aba8b9c19a971a8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -28,9 +28,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _BlackHoleRadiusThreshold: 0.55
-    - _BlackHoleScale: 3.725
-    m_Colors: []
+    m_Floats: []
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

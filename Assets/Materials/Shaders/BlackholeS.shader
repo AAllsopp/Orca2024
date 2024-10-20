@@ -7,6 +7,7 @@ Shader "Unlit/BlackHole"
         _BlackHoleScale ("BlackHoleScale", Float) = 1.0
         _RadiusT1 ("RadiusT1", Float) = 0.44
         _RadiusT2 ("RadiusT2", Float) = 0.6
+        // _RadiusT2 ("RadiusT2", Float) = 0.6
 
     }
     SubShader

@@ -1,8 +1,9 @@
-Shader "Unlit/NewUnlitShader"
+Shader "Unlit/Stars"
 {
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
+        _StarsTex ("Texture", 2D) {}
     }
     SubShader
     {
@@ -35,11 +36,14 @@ Shader "Unlit/NewUnlitShader"
             sampler2D _MainTex;
             float4 _MainTex_ST;
 
+            sampler2D _StarsTex;
+            float4 _StarsTex_ST;
+
             v2f vert (appdata v)
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = TRANSFORM_TEX(v.uv, _MainTex);
+                o.uv = TRANSFORM_TEX(v.uv, _StarsTex);
                 UNITY_TRANSFER_FOG(o,o.vertex);
                 return o;
             }
@@ -47,7 +51,7 @@ Shader "Unlit/NewUnlitShader"
             fixed4 frag (v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
+                fixed4 col = tex2D(_StarsTex, i.uv);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col;
