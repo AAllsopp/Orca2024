@@ -16,6 +16,7 @@ public class character : MonoBehaviour
     public GameObject cam_ref;
     // public CinemachineCamera cinemachineCamera;
     public CinemachineOrbitalFollow cinemachineCamera;
+    public Spawner spawnerScript;
 
 
 
@@ -23,6 +24,8 @@ public class character : MonoBehaviour
     void Start()
     {
         charController = GetComponent<CharacterController>();
+        spawnerScript = GetComponent<Spawner>();
+        spawnerScript.enabled = true;
         
     }
 
@@ -62,10 +65,12 @@ public class character : MonoBehaviour
                     Destroy(hit.gameObject);
                     UpdateCameraOrbit(newSize.x*5);
                     Debug.Log("Player Size: " + playerSize.x);
+                    FindFirstObjectByType<Spawner>().SpawnSphere();
                     
                 }
                 else{
                     Destroy(gameObject); // >:(
+                    
                 }
 
             }
