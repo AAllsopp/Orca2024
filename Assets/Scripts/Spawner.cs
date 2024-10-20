@@ -5,6 +5,13 @@ public class Spawner : MonoBehaviour
     public GameObject mySphere1;
     public GameObject mySphere2;
     public GameObject mySphere3;
+    public GameObject mySphere4;
+    public GameObject mySphere5;
+    public GameObject mySphere6;
+    public GameObject mySphere7;
+    public GameObject mySphere8;
+    public GameObject mySphere9;
+    public GameObject mySphere10;
 
     private GameObject [] spheres;
     
@@ -18,7 +25,7 @@ public class Spawner : MonoBehaviour
         
         Vector3 playerSize = FindFirstObjectByType<character>().getSize();
 
-        spheres = new GameObject[] {mySphere1, mySphere2, mySphere3};
+        spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere6, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10};
         // Logic to increase the chances based on player size
         GameObject sphereToSpawn;
         if (playerSize.x < 2)
