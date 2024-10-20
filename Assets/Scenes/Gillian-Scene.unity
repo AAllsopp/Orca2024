@@ -241,6 +241,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3500214165031171805, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
   m_PrefabInstance: {fileID: 260863206}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &423911068 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2821652593500036290, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+  m_PrefabInstance: {fileID: 260863206}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423911065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b5d7c088409d9a40b7b09aa707777f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &456440278
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,7 +734,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  camRot: {fileID: 423911065}
+  cam_ref: {fileID: 423911065}
+  cinemachineCamera: {fileID: 423911068}
 --- !u!136 &1163393014
 CapsuleCollider:
   m_ObjectHideFlags: 0

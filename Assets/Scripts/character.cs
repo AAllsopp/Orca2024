@@ -1,6 +1,8 @@
 using UnityEngine;
+// using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Cinemachine;
 
 public class character : MonoBehaviour
 {   
@@ -8,10 +10,12 @@ public class character : MonoBehaviour
     public float Speed=5f;
     private bool playerGround; 
     private Vector3 playerSize = new Vector3 (1,1,1);
-    private float rotationSpeed = 270f;
+    // private float rotationSpeed = 270f;
     private Vector3 rotation;
     private Vector3 ScaleSize = new Vector3(0.1f, 0.1f, 0.1f);
-    public GameObject camRot;
+    public GameObject cam_ref;
+    // public CinemachineCamera cinemachineCamera;
+    public CinemachineOrbitalFollow cinemachineCamera;
 
 
 
@@ -37,7 +41,8 @@ public class character : MonoBehaviour
         }
         charController.Move(move*Speed);
 
-        transform.rotation = camRot.transform.rotation;
+        transform.rotation = cam_ref.transform.rotation;
+        
     
 
     }
@@ -57,6 +62,7 @@ public class character : MonoBehaviour
                 playerSize += newSize;
                 
                 Destroy(hit.gameObject);
+                UpdateCameraOrbit(playerSize.x);
                 
             }
             else{
@@ -66,6 +72,34 @@ public class character : MonoBehaviour
         }
         
     }
+
+    void UpdateCameraOrbit(float size)
+    {
+        if (cinemachineCamera != null)
+        {
+            
+                // You can adjust these scaling factors to control how the height and radius change
+                float heightAdder = size; // Increase height based on size
+                float radiusAdder = size; // Increase radius based on size
+
+                cinemachineCamera.Orbits.Top.Height += heightAdder;
+                cinemachineCamera.Orbits.Center.Height += heightAdder;
+                cinemachineCamera.Orbits.Bottom.Height += heightAdder;
+
+                cinemachineCamera.Orbits.Top.Radius += radiusAdder;
+                cinemachineCamera.Orbits.Center.Radius += radiusAdder;
+                cinemachineCamera.Orbits.Bottom.Radius += radiusAdder;
+        }
+    }
+
+    public Vector3 getPos() {
+        return charController.transform.position;
+    }
+
+    public Vector3 getSize() {
+        return playerSize;
+    }
+
     Vector3 vectorScale(Vector3 curSize, float multiplier){
         curSize.x *= multiplier;
         curSize.y *= multiplier;
