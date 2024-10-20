@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
 
     private GameObject [] spheres;
     private int [] morePlanetRange = {0, 3};
-    private float curSizeIndex = 8f;
+    private float curSizeIndex = 6f;
 
     public void initializeSpawn(){
         GameObject sphereToSpawn;
@@ -45,6 +45,7 @@ public class Spawner : MonoBehaviour
 
         Instantiate(sphereToSpawn, spawnPosition, Quaternion.identity);
         Instantiate(mySphere1, spawnPosition, Quaternion.identity);
+        
 
     }
     public void SpawnSphere() {
@@ -55,10 +56,10 @@ public class Spawner : MonoBehaviour
         spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere5, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10, mySphere11, mySphere12, mySphere13, mySphere14, mySphere15, mySphere16, mySphere17, mySphere18, mySphere19, mySphere20,};
 
         // changes range for more planet spawns if it moves outside the current range
-        if(playerSize.x > curSizeIndex && curSizeIndex < 130f){
+        if(playerSize.x > curSizeIndex && curSizeIndex < 344f){
             morePlanetRange[0] +=1;
             morePlanetRange[1] +=1;
-            curSizeIndex = morePlanetRange[1]; 
+            curSizeIndex = spheres[morePlanetRange[1]].transform.localScale.x; 
         }
         
 

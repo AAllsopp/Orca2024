@@ -7,7 +7,7 @@ using Unity.Cinemachine;
 public class character : MonoBehaviour
 {   
     private CharacterController charController;
-    public float Speed=5f;
+    public float Speed=10f;
     private bool playerGround; 
     private Vector3 playerSize = new Vector3 (1.8f,1.8f,1.8f);
     // private float rotationSpeed = 270f;
@@ -26,7 +26,7 @@ public class character : MonoBehaviour
     {
         charController = GetComponent<CharacterController>();
 
-        for (int i =0;i < 300; i++){
+        for (int i =0;i < 350; i++){
             FindFirstObjectByType<Spawner>().initializeSpawn();
             FindFirstObjectByType<Spawner>().SpawnSphere();
 
@@ -74,7 +74,9 @@ public class character : MonoBehaviour
                     Destroy(hit.gameObject);
                     UpdateCameraOrbit(newSize.x*5);
                     Debug.Log("Player Size: " + playerSize.x);
-                    FindFirstObjectByType<Spawner>().SpawnSphere();
+                    for (int i =0; i <4; i++){
+                        FindFirstObjectByType<Spawner>().SpawnSphere();
+                    }
                     
                 }
                 else{
