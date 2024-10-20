@@ -71,6 +71,7 @@
     <Compile Include="Assets\Scripts\PipeMoveScript.cs" />
     <Compile Include="Assets\Scripts\TextIndicator.cs" />
     <Compile Include="Assets\Scripts\MattsTestScript.cs" />
+    <Compile Include="Assets\Scripts\App.cs" />
     <Compile Include="Assets\Scripts\PipeSpawnScript.cs" />
     <Compile Include="Assets\Scripts\character.cs" />
     <Compile Include="Assets\Scripts\PlanetMovement.cs" />
