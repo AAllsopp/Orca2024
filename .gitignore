@@ -4,3 +4,7 @@ Library/
 Logs/
 Assets/.DS_Store
 UserSettings/
+*.blob
+*.csproj
+EditorUserSettings.asset
+*.dwlt
