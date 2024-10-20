@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a401dde86ee915b46be6609d4b2d324f
+timeCreated: 1433276063
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 38913
+  packageName: Vast Outer Space
+  packageVersion: 1.0
+  assetPath: Assets/Vast Outer Space/Prefabs/Particle Effects/Asteroids_Dense_B.prefab
+  uploadId: 67260
