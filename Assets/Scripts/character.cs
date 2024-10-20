@@ -62,7 +62,7 @@ public class character : MonoBehaviour
                 playerSize += newSize;
                 
                 Destroy(hit.gameObject);
-                UpdateCameraOrbit(playerSize.x);
+                UpdateCameraOrbit(newSize.x*5);
                 
             }
             else{
@@ -83,8 +83,8 @@ public class character : MonoBehaviour
                 float radiusAdder = size; // Increase radius based on size
 
                 cinemachineCamera.Orbits.Top.Height += heightAdder;
-                cinemachineCamera.Orbits.Center.Height += heightAdder;
-                cinemachineCamera.Orbits.Bottom.Height += heightAdder;
+                //cinemachineCamera.Orbits.Center.Height += heightAdder;
+                cinemachineCamera.Orbits.Bottom.Height -= heightAdder;
 
                 cinemachineCamera.Orbits.Top.Radius += radiusAdder;
                 cinemachineCamera.Orbits.Center.Radius += radiusAdder;
