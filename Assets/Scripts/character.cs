@@ -9,7 +9,7 @@ public class character : MonoBehaviour
     private CharacterController charController;
     public float Speed=5f;
     private bool playerGround; 
-    private Vector3 playerSize = new Vector3 (1,1,1);
+    private Vector3 playerSize = new Vector3 (1.8f,1.8f,1.8f);
     // private float rotationSpeed = 270f;
     private Vector3 rotation;
     private Vector3 ScaleSize = new Vector3(0.1f, 0.1f, 0.1f);
@@ -24,8 +24,14 @@ public class character : MonoBehaviour
     void Start()
     {
         charController = GetComponent<CharacterController>();
-        spawnerScript = GetComponent<Spawner>();
-        spawnerScript.enabled = true;
+
+        for (int i =0;i < 300; i++){
+            FindFirstObjectByType<Spawner>().initializeSpawn();
+            FindFirstObjectByType<Spawner>().SpawnSphere();
+
+        }
+        Debug.Log("Start check");
+
         
     }
 
@@ -53,9 +59,7 @@ public class character : MonoBehaviour
         void OnControllerColliderHit(ControllerColliderHit hit){
             if(hit.gameObject.CompareTag("Food")){
                 Vector3 foodSize = hit.collider.bounds.size;
-            // Debug.Log("Player x size: " + playerSize.x);
-            //  Debug.Log("Player y size: " + playerSize.y);
-            // Debug.Log("Player z size: " + playerSize.z);
+            
 
                 if(playerSize.x >= foodSize.x){
                     Vector3 newSize = vectorScale(foodSize, 0.1f);

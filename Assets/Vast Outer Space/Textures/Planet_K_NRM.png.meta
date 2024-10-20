@@ -10,7 +10,6 @@ TextureImporter:
     enableMipMap: 1
     linearTexture: 1
     correctGamma: 0
-
     fadeOut: 0
     borderMipMap: 0
     mipMapFadeDistanceStart: 1
@@ -48,7 +47,6 @@ TextureImporter:
   alphaIsTransparency: 0
   textureType: 1
   buildTargetSettings: []
-
   spriteSheet:
     sprites: []
   spritePackingTag: 
