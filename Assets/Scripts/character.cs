@@ -63,6 +63,7 @@ public class character : MonoBehaviour
                 
                 Destroy(hit.gameObject);
                 UpdateCameraOrbit(newSize.x*5);
+                Debug.Log("Player Size: " + playerSize.x);
                 
             }
             else{

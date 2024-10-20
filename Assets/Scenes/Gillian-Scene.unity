@@ -315,6 +315,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet-food4
       objectReference: {fileID: 0}
+    - target: {fileID: 2325626346638650012, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4935141975825539250, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1378,6 +1382,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet-food6
       objectReference: {fileID: 0}
+    - target: {fileID: 1706075356844216573, guid: 3461210ea44a54152bca0ac6b698c03b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2280947982599988521, guid: 3461210ea44a54152bca0ac6b698c03b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 67.5
@@ -1465,6 +1473,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet-food3
       objectReference: {fileID: 0}
+    - target: {fileID: 256414813846535276, guid: ec33076998ba240fa8b56d25c0cc088d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8856822981477618726, guid: ec33076998ba240fa8b56d25c0cc088d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.28
@@ -1521,6 +1533,10 @@ PrefabInstance:
     - target: {fileID: 1377644102208438817, guid: cfcf4b650bf35495594eac6f7e20995e, type: 3}
       propertyPath: m_Name
       value: planet-food7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377644102208438817, guid: cfcf4b650bf35495594eac6f7e20995e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7222161856288434170, guid: cfcf4b650bf35495594eac6f7e20995e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1579,6 +1595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet-food2
       objectReference: {fileID: 0}
+    - target: {fileID: 1692269805872491560, guid: c51e9c4a0b9b84dfe90b60df6f4e95c1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5214132645245329465, guid: c51e9c4a0b9b84dfe90b60df6f4e95c1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.83
@@ -1635,6 +1655,10 @@ PrefabInstance:
     - target: {fileID: 312950079273522116, guid: 8a7b6e1982b8540bfb6710c58aa246ec, type: 3}
       propertyPath: m_Name
       value: planet-food10
+      objectReference: {fileID: 0}
+    - target: {fileID: 312950079273522116, guid: 8a7b6e1982b8540bfb6710c58aa246ec, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1001055623684261654, guid: 8a7b6e1982b8540bfb6710c58aa246ec, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1737,6 +1761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet-food
       objectReference: {fileID: 0}
+    - target: {fileID: 2325626346638650012, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1753,6 +1781,10 @@ PrefabInstance:
     - target: {fileID: 3243767057479843829, guid: f3ddaf6c764c44fd6a91c8876847c21e, type: 3}
       propertyPath: m_Name
       value: planet-food5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3243767057479843829, guid: f3ddaf6c764c44fd6a91c8876847c21e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9203179687539176496, guid: f3ddaf6c764c44fd6a91c8876847c21e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1861,6 +1893,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet-food9
       objectReference: {fileID: 0}
+    - target: {fileID: 4723730809510731924, guid: bb6189bc9d6ac44cbb73475fff8c5ba9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1918,6 +1954,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: planet-food8
       objectReference: {fileID: 0}
+    - target: {fileID: 9019576284673902079, guid: d703f69c3115545a7a7187eeef255ff2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1931,15 +1971,15 @@ SceneRoots:
   - {fileID: 559517251}
   - {fileID: 1163393011}
   - {fileID: 5439498050532510468}
-  - {fileID: 3885318785124972739}
-  - {fileID: 9138044335149433054}
-  - {fileID: 9187165646259463991}
-  - {fileID: 2835316035790086220}
-  - {fileID: 192876140392813117}
-  - {fileID: 7073115358646035457}
-  - {fileID: 403568606}
-  - {fileID: 2769524950171065629}
   - {fileID: 2974710174417654176}
+  - {fileID: 2769524950171065629}
+  - {fileID: 403568606}
+  - {fileID: 7073115358646035457}
+  - {fileID: 192876140392813117}
+  - {fileID: 2835316035790086220}
+  - {fileID: 9187165646259463991}
+  - {fileID: 9138044335149433054}
+  - {fileID: 3885318785124972739}
   - {fileID: 260863206}
   - {fileID: 149113465}
   - {fileID: 2132418646}

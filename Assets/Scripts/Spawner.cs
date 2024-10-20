@@ -17,13 +17,16 @@ public class Spawner : MonoBehaviour
     
     public void SpawnSphere() {
         Vector3 playerPos = FindFirstObjectByType<character>().getPos();
+        Vector3 playerSize = FindFirstObjectByType<character>().getSize();
+
+        // int randomRangeNeg = 
         int spawnPointX = Random.Range(-20, 20);
         int spawnPointY = Random.Range(-20, 30);
         int spawnPointZ = Random.Range(-20, 20);
 
         Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ) + playerPos;
         
-        Vector3 playerSize = FindFirstObjectByType<character>().getSize();
+        
 
         spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere6, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10};
         // Logic to increase the chances based on player size
