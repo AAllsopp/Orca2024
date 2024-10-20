@@ -25,8 +25,16 @@ public class character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Vector3 move = new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime, 0, Input.GetAxis("Vertical")*Time.deltaTime);
         move = this.transform.TransformDirection(move);
+        if(Input.GetKey(KeyCode.Space)){
+            move.y += Time.deltaTime;
+
+        }
+        else if (Input.GetKey(KeyCode.LeftShift)){
+            move.y -= Time.deltaTime;
+        }
         charController.Move(move*Speed);
 
         transform.rotation = camRot.transform.rotation;
