@@ -27,10 +27,11 @@ public class character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.rotation = new Vector3(0, Input.GetAxis("Horizontal")*rotationSpeed*Time.deltaTime, 0);
-        Vector3 move = new Vector3(0,0, Input.GetAxis("Vertical")*Time.deltaTime);
+        //this.rotation = new Vector3(0, Input.GetAxis("Horizontal")*rotationSpeed*Time.deltaTime, 0);
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime, 0, Input.GetAxis("Vertical")*Time.deltaTime);
         move = this.transform.TransformDirection(move);
         charController.Move(move*Speed);
+
         this.transform.Rotate(this.rotation);
 
     }
@@ -45,9 +46,6 @@ public class character : MonoBehaviour
                 Vector3 newSize = vectorScale(foodSize, 0.1f);
                 gameObject.transform.localScale += newSize;
                 
-               // playerSize.x += foodSize.x;
-               // playerSize.y += foodSize.y;
-               // playerSize.z += foodSize.z;
                 Destroy(hit.gameObject);
                 
             }
