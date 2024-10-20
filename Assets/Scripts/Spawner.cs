@@ -89,7 +89,7 @@ public class Spawner : MonoBehaviour
         spawnPoint.z += playerSize.z*randScaleZ;
 
         
-        float planetRad = planet.transform.localScale.x/2;
+        float planetRad = planet.transform.localScale.x/2 + 6;
         float playerRad = playerSize.x;
         if(playerRad >= spawnPoint.x - planetRad && playerRad <= spawnPoint.x + planetRad){
 
