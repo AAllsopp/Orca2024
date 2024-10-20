@@ -39,7 +39,7 @@ public class character : MonoBehaviour
         else if (Input.GetKey(KeyCode.LeftShift)){
             move.y -= Time.deltaTime;
         }
-        charController.Move(move*Speed);
+        charController.Move(move*Speed*playerSize.x);
 
         transform.rotation = cam_ref.transform.rotation;
         
