@@ -5,11 +5,16 @@ using System.Collections.Generic;
 public class character : MonoBehaviour
 {   
     private CharacterController charController;
-    private Vector3 playerVel;
     public float Speed=5f;
     private bool playerGround; 
-    private float jumpHeight = 1.0f;
-    private float gravityValue = -9.81f;
+    private Vector3 playerSize = new Vector3 (1,1,1);
+    private float rotationSpeed = 270f;
+    private Vector3 rotation;
+    private Vector3 ScaleSize = new Vector3(0.1f, 0.1f, 0.1f);
+    public GameObject camRot;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,23 +25,45 @@ public class character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerGround = charController.isGrounded;
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime, 0, Input.GetAxis("Vertical")*Time.deltaTime);
+        move = this.transform.TransformDirection(move);
+        charController.Move(move*Speed);
 
-        if (playerGround && playerVel.y <0){
-            playerVel.y = 0f;
+        transform.rotation = camRot.transform.rotation;
+    
+
+    }
+
+        void OnControllerColliderHit(ControllerColliderHit hit){
+
+
+        if(hit.gameObject.CompareTag("Food")){
+            Vector3 foodSize = hit.collider.bounds.size;
+           // Debug.Log("Player x size: " + playerSize.x);
+          //  Debug.Log("Player y size: " + playerSize.y);
+           // Debug.Log("Player z size: " + playerSize.z);
+
+            if(playerSize.x >= foodSize.x){
+                Vector3 newSize = vectorScale(foodSize, 0.4f);
+                gameObject.transform.localScale += newSize;
+                playerSize += newSize;
+                
+                Destroy(hit.gameObject);
+                
+            }
+            else{
+                Destroy(gameObject); // >:(
+            }
 
         }
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        charController.Move(move*Time.deltaTime* Speed);
+        
+    }
+    Vector3 vectorScale(Vector3 curSize, float multiplier){
+        curSize.x *= multiplier;
+        curSize.y *= multiplier;
+        curSize.z *= multiplier;
 
-        if(move != Vector3.zero){
-            gameObject.transform.forward = move;
-        }
+        return curSize;
 
-        if(Input.GetButtonDown("Jump") && playerGround){
-            playerVel.y += Mathf.Sqrt(jumpHeight * -3.0f *gravityValue);
-        }
-        playerVel.y += gravityValue*Time.deltaTime;
-        charController.Move(playerVel*Time.deltaTime);
     }
 }
