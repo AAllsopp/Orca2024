@@ -23,15 +23,19 @@ public class Spawner : MonoBehaviour
     
     public void SpawnSphere() {
         Vector3 playerPos = FindFirstObjectByType<character>().getPos();
-        
+
+        Vector3 playerSize = FindFirstObjectByType<character>().getSize();
+
+
         int spawnPointX = Random.Range(-20, 20);
         int spawnPointY = Random.Range(-20, 30);
         int spawnPointZ = Random.Range(-20, 20);
 
         Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ) + playerPos;
         
-        Vector3 playerSize = FindFirstObjectByType<character>().getSize();
+
         spawnPosition += playerSize;
+
 
         spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere6, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10};
         planetSizes = new float[] {0.5f, 2f, 8f, 14f, 24f, 35f, 60f, 75f, 100f, 130f};
