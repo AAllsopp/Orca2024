@@ -64,6 +64,7 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.0.23f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Assets/Scripts/RandomQuoteGen.cs" />
     <Compile Include="Assets/Scripts/Spawner.cs" />
     <Compile Include="Assets/Scripts/planetFood.cs" />
@@ -72,6 +73,7 @@
     <Compile Include="Assets/Scripts/PipeSpawnScript.cs" />
     <Compile Include="Assets/Scripts/character.cs" />
     <Compile Include="Assets/Scripts/SceneLoader.cs" />
+
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

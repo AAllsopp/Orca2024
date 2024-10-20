@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5696822256560417880}
   - component: {fileID: 6456587733654486358}
   - component: {fileID: 7190744613398341741}
+  - component: {fileID: 3562497958648343508}
   m_Layer: 0
   m_Name: planet-food4
   m_TagString: Food
@@ -96,6 +97,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3562497958648343508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245285531220620493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d191eda0b0589714d83e22637ebfa330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  planet: {fileID: 0}
 --- !u!1 &4250103912762116345
 GameObject:
   m_ObjectHideFlags: 0
