@@ -30,6 +30,7 @@ public class character : MonoBehaviour
         charController.Move(move*Speed);
 
         transform.rotation = camRot.transform.rotation;
+    
 
     }
 
@@ -38,10 +39,14 @@ public class character : MonoBehaviour
 
         if(hit.gameObject.CompareTag("Food")){
             Vector3 foodSize = hit.collider.bounds.size;
+           // Debug.Log("Player x size: " + playerSize.x);
+          //  Debug.Log("Player y size: " + playerSize.y);
+           // Debug.Log("Player z size: " + playerSize.z);
+
             if(playerSize.x >= foodSize.x){
-                
-                Vector3 newSize = vectorScale(foodSize, 0.1f);
+                Vector3 newSize = vectorScale(foodSize, 0.4f);
                 gameObject.transform.localScale += newSize;
+                playerSize += newSize;
                 
                 Destroy(hit.gameObject);
                 
