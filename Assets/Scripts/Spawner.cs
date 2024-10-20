@@ -15,6 +15,16 @@ public class Spawner : MonoBehaviour
     public GameObject mySphere8;
     public GameObject mySphere9;
     public GameObject mySphere10;
+    public GameObject mySphere11;
+    public GameObject mySphere12;
+    public GameObject mySphere13;
+    public GameObject mySphere14;
+    public GameObject mySphere15;
+    public GameObject mySphere16;
+    public GameObject mySphere17;
+    public GameObject mySphere18;
+    public GameObject mySphere19;
+    public GameObject mySphere20;
 
     private GameObject [] spheres;
     private float [] planetSizes;
@@ -25,16 +35,10 @@ public class Spawner : MonoBehaviour
         Vector3 playerPos = FindFirstObjectByType<character>().getPos();
         Vector3 playerSize = FindFirstObjectByType<character>().getSize();
 
-        int spawnPointX = Random.Range(-20, 20);
-        int spawnPointY = Random.Range(-20, 30);
-        int spawnPointZ = Random.Range(-20, 20);
-
-        Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ) + playerPos;
         
-        spawnPosition += playerSize;
+        
 
-
-        spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere6, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10};
+        spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere5, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10, mySphere11, mySphere12, mySphere13, mySphere14, mySphere15, mySphere16, mySphere17, mySphere18, mySphere19, mySphere20,};
         planetSizes = new float[] {0.5f, 2f, 8f, 14f, 24f, 35f, 60f, 75f, 100f, 130f};
 
         // changes range for more planet spawns if it moves outside the current range
@@ -69,8 +73,40 @@ public class Spawner : MonoBehaviour
         
         
         //spawnPosition
+        Vector3 spawnPosition = setSpawn(playerSize, playerPos, sphereToSpawn);
         Instantiate(sphereToSpawn, spawnPosition, Quaternion.identity);
         
         
+    }
+    public Vector3 setSpawn(Vector3 playerSize, Vector3 playerPos, GameObject planet){
+        Vector3 spawnPoint = playerPos;
+        int randScaleX = Random.Range(-250, 250);
+        int randScaleY = Random.Range(-250, 250);
+        int randScaleZ = Random.Range(-250, 250);
+        
+        spawnPoint.x += playerSize.x*randScaleX;
+        spawnPoint.y += playerSize.y*randScaleY;
+        spawnPoint.z += playerSize.z*randScaleZ;
+
+        
+        float planetRad = planet.transform.localScale.x/2;
+        float playerRad = playerSize.x;
+        if(playerRad >= spawnPoint.x - planetRad && playerRad <= spawnPoint.x + planetRad){
+
+            if(playerRad >= spawnPoint.y - planetRad && playerRad <= spawnPoint.y + planetRad){
+
+                if(playerRad >= spawnPoint.z - planetRad && playerRad <= spawnPoint.z + planetRad){
+
+                    //player is colliding with current planet spawn
+                    spawnPoint = setSpawn(playerSize, playerPos, planet);
+
+                }
+            }
+        }
+        
+
+
+        return spawnPoint;
+
     }
 }
