@@ -27,19 +27,32 @@ public class Spawner : MonoBehaviour
     public GameObject mySphere20;
 
     private GameObject [] spheres;
-    private float [] planetSizes;
     private int [] morePlanetRange = {0, 3};
     private float curSizeIndex = 8f;
-    
-    public void SpawnSphere() {
+
+    public void initializeSpawn(){
+        GameObject sphereToSpawn;
+        
         Vector3 playerPos = FindFirstObjectByType<character>().getPos();
         Vector3 playerSize = FindFirstObjectByType<character>().getSize();
 
-        
+        spheres = new GameObject[] {mySphere1, mySphere2, mySphere3};
+
+        int listRand = Random.Range(0, spheres.Length);
+        sphereToSpawn = spheres[listRand];
+        Vector3 spawnPosition = setSpawn(playerSize, playerPos, sphereToSpawn, true);
+
+
+        Instantiate(sphereToSpawn, spawnPosition, Quaternion.identity);
+        Instantiate(mySphere1, spawnPosition, Quaternion.identity);
+
+    }
+    public void SpawnSphere() {
+        Vector3 playerPos = FindFirstObjectByType<character>().getPos();
+        Vector3 playerSize = FindFirstObjectByType<character>().getSize();
         
 
         spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere5, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10, mySphere11, mySphere12, mySphere13, mySphere14, mySphere15, mySphere16, mySphere17, mySphere18, mySphere19, mySphere20,};
-        planetSizes = new float[] {0.5f, 2f, 8f, 14f, 24f, 35f, 60f, 75f, 100f, 130f};
 
         // changes range for more planet spawns if it moves outside the current range
         if(playerSize.x > curSizeIndex && curSizeIndex < 130f){
@@ -60,7 +73,7 @@ public class Spawner : MonoBehaviour
 
         // pick the top list 
             // get the excluded less popular list 
-        if (rand < 70) 
+        if (rand < 85) 
         {   
             int listRand = Random.Range(morePlanetRange[0], morePlanetRange[1]);
             sphereToSpawn = spheres[listRand]; // 60% chance for small sphere
@@ -73,23 +86,34 @@ public class Spawner : MonoBehaviour
         
         
         //spawnPosition
-        Vector3 spawnPosition = setSpawn(playerSize, playerPos, sphereToSpawn);
+        Vector3 spawnPosition = setSpawn(playerSize, playerPos, sphereToSpawn, false);
         Instantiate(sphereToSpawn, spawnPosition, Quaternion.identity);
         
         
     }
-    public Vector3 setSpawn(Vector3 playerSize, Vector3 playerPos, GameObject planet){
+    public Vector3 setSpawn(Vector3 playerSize, Vector3 playerPos, GameObject planet, bool isInit){
         Vector3 spawnPoint = playerPos;
-        int randScaleX = Random.Range(-250, 250);
-        int randScaleY = Random.Range(-250, 250);
-        int randScaleZ = Random.Range(-250, 250);
+        int randScaleX;
+        int randScaleY;
+        int randScaleZ;
+        if (isInit){
+            randScaleX = Random.Range(-150, 150);
+            randScaleY = Random.Range(-150, 150);
+            randScaleZ = Random.Range(-150, 150);
+
+        }else{
+            randScaleX = Random.Range(-360, 360);
+            randScaleY = Random.Range(-360, 360);
+            randScaleZ = Random.Range(-360, 360);
+        }
+       
         
         spawnPoint.x += playerSize.x*randScaleX;
         spawnPoint.y += playerSize.y*randScaleY;
         spawnPoint.z += playerSize.z*randScaleZ;
 
         
-        float planetRad = planet.transform.localScale.x/2;
+        float planetRad = planet.transform.localScale.x/2 + 6;
         float playerRad = playerSize.x;
         if(playerRad >= spawnPoint.x - planetRad && playerRad <= spawnPoint.x + planetRad){
 
@@ -98,7 +122,7 @@ public class Spawner : MonoBehaviour
                 if(playerRad >= spawnPoint.z - planetRad && playerRad <= spawnPoint.z + planetRad){
 
                     //player is colliding with current planet spawn
-                    spawnPoint = setSpawn(playerSize, playerPos, planet);
+                    spawnPoint = setSpawn(playerSize, playerPos, planet, false);
 
                 }
             }
