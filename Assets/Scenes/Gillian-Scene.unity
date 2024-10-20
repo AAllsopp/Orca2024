@@ -2267,6 +2267,30 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2390808247603781199, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072803722186648580, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 84.899994
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072803722186648580, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072803722186648580, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 63
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072803722186648580, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.169
+      objectReference: {fileID: 0}
+    - target: {fileID: 9072803722186648580, guid: 4793c1646c36e4c5e8b3853d8cb950fb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
