@@ -39,7 +39,7 @@ public class character : MonoBehaviour
         else if (Input.GetKey(KeyCode.LeftShift)){
             move.y -= Time.deltaTime;
         }
-        charController.Move(move*Speed);
+        charController.Move(move*Speed*playerSize.x);
 
         transform.rotation = cam_ref.transform.rotation;
         
@@ -48,29 +48,27 @@ public class character : MonoBehaviour
     }
 
         void OnControllerColliderHit(ControllerColliderHit hit){
+            if(hit.gameObject.CompareTag("Food")){
+                Vector3 foodSize = hit.collider.bounds.size;
+            // Debug.Log("Player x size: " + playerSize.x);
+            //  Debug.Log("Player y size: " + playerSize.y);
+            // Debug.Log("Player z size: " + playerSize.z);
 
+                if(playerSize.x >= foodSize.x){
+                    Vector3 newSize = vectorScale(foodSize, 0.1f);
+                    gameObject.transform.localScale += newSize;
+                    playerSize += newSize;
+                    
+                    Destroy(hit.gameObject);
+                    UpdateCameraOrbit(newSize.x*5);
+                    Debug.Log("Player Size: " + playerSize.x);
+                    
+                }
+                else{
+                    Destroy(gameObject); // >:(
+                }
 
-        if(hit.gameObject.CompareTag("Food")){
-            Vector3 foodSize = hit.collider.bounds.size;
-           // Debug.Log("Player x size: " + playerSize.x);
-          //  Debug.Log("Player y size: " + playerSize.y);
-           // Debug.Log("Player z size: " + playerSize.z);
-
-            if(playerSize.x >= foodSize.x){
-                Vector3 newSize = vectorScale(foodSize, 0.4f);
-                gameObject.transform.localScale += newSize;
-                playerSize += newSize;
-                
-                Destroy(hit.gameObject);
-                UpdateCameraOrbit(newSize.x*5);
-                
             }
-            else{
-                Destroy(gameObject); // >:(
-            }
-
-        }
-        
     }
 
     void UpdateCameraOrbit(float size)
