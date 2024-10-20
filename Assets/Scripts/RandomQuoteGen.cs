@@ -24,7 +24,9 @@ public class RandomQuoteGen : MonoBehaviour
         "\"If you want to succeed, you have to have balls.\" \n\n- Mike Tyson",
         "\"I know the human being and balls can coexist peacefully.\" \n\n- George W. Bush",
         "\"Imma push these balls\" \n\n- Sisyphus",
-        "\"Touch my balls\" \n\n- motivational quote website"
+        "\"Touch my balls\" \n\n- motivational quote website",
+        "\"Imitation Crab Roe Balls? Lobster Balls? Cuttlefish Balls? SO MANY BALLS!\" \n\n - Ariana",
+        "\"... [Balls]\" \n\n- Stephen Hawking"
     };
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,4 +39,5 @@ public class RandomQuoteGen : MonoBehaviour
     {
         
     }
+
 }
