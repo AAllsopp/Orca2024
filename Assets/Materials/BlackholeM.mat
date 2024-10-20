@@ -31,8 +31,13 @@ Material:
     m_Floats:
     - _BlackHoleRadiusThreshold: 0.44
     - _BlackHoleScale: 3.725
-    - _RadiusT1: 0.39
-    - _RadiusT2: 0.47
-    m_Colors: []
+    - _DistortScale: 0.2
+    - _RadiusT1: 0.464
+    - _RadiusT2: 0.488
+    - _WarpDelta: 0.129
+    m_Colors:
+    - _CameraUp: {r: 0, g: 1, b: 0, a: 0}
+    - _HazeColor: {r: 0.9979216, g: 1, b: 0.894, a: 0.015686275}
+    - _RingColor: {r: 0.9882, g: 1, b: 0.823, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
