@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Spawner : MonoBehaviour
 {
@@ -14,9 +17,15 @@ public class Spawner : MonoBehaviour
     public GameObject mySphere10;
 
     private GameObject [] spheres;
+    private float [] planetSizes;
+    private int [] morePlanetRange = {0, 3};
+    private float curSizeIndex = 8f;
     
     public void SpawnSphere() {
         Vector3 playerPos = FindFirstObjectByType<character>().getPos();
+        //get player size 
+            // rand player size * 100 
+        
         int spawnPointX = Random.Range(-20, 20);
         int spawnPointY = Random.Range(-20, 30);
         int spawnPointZ = Random.Range(-20, 20);
@@ -26,48 +35,40 @@ public class Spawner : MonoBehaviour
         Vector3 playerSize = FindFirstObjectByType<character>().getSize();
 
         spheres = new GameObject[] {mySphere1, mySphere2, mySphere3, mySphere4, mySphere6, mySphere6, mySphere7, mySphere8, mySphere9, mySphere10};
+        planetSizes = new float[] {0.5f, 2f, 8f, 14f, 24f, 35f, 60f, 75f, 100f, 130f};
+
+        // changes range for more planet spawns if it moves outside the current range
+        if(playerSize.x > curSizeIndex && curSizeIndex < 130f){
+            morePlanetRange[0] +=1;
+            morePlanetRange[1] +=1;
+            curSizeIndex = morePlanetRange[1]; 
+        }
+        
+
+        //update spawn position for size of planet 
+
+
         // Logic to increase the chances based on player size
+        // spawn from size of player 2below and 2 above 
         GameObject sphereToSpawn;
-        if (playerSize.x < 2)
-        {
-            // Increase likelihood of smaller sphere
-            int rand = Random.Range(0, 100); // Generate a random number from 0 to 99
-            if (rand < 60) 
-            {
-                sphereToSpawn = mySphere1; // 60% chance for small sphere
-            }
-            else if (rand < 90)
-            {
-                sphereToSpawn = mySphere2; // 30% chance for medium sphere
-            }
-            else
-            {
-                sphereToSpawn = mySphere3; // 10% chance for large sphere
-            }
+        
+        int rand = Random.Range(0, 100); // Generate a random number from 0 to 99
+
+        // pick the top list 
+            // get the excluded less popular list 
+        if (rand < 70) 
+        {   
+            int listRand = Random.Range(morePlanetRange[0], morePlanetRange[1]);
+            sphereToSpawn = spheres[listRand]; // 60% chance for small sphere
         }
-        else if (playerSize.x > 2)
-        {
-            // Increase likelihood of larger sphere
-            int rand = Random.Range(0, 100);
-            if (rand < 20)
-            {
-                sphereToSpawn = mySphere1; // 20% chance for small sphere
-            }
-            else if (rand < 60)
-            {
-                sphereToSpawn = mySphere2; // 40% chance for medium sphere
-            }
-            else
-            {
-                sphereToSpawn = mySphere3; // 40% chance for large sphere
-            }
-        }
-        else
-        {
-            // If player's size is exactly 2, use default even distribution
+        else{
             int listRand = Random.Range(0, spheres.Length);
             sphereToSpawn = spheres[listRand];
         }
+            // If player's size is exactly 2, use default even distribution
+        
+        
+        //spawnPosition
         Instantiate(sphereToSpawn, spawnPosition, Quaternion.identity);
         
         
