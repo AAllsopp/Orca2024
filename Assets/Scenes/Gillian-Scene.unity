@@ -226,6 +226,18 @@ PrefabInstance:
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 1163393011}
+    - target: {fileID: 2443795907777840285, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[0].Input.LegacyGain
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443795907777840285, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[1].Input.LegacyGain
+      value: -200
+      objectReference: {fileID: 0}
+    - target: {fileID: 2443795907777840285, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: m_ControllerManager.Controllers.Array.data[1].Input.CancelDeltaTime
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2582349403162487697, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -266,9 +278,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2821652593500036290, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: Orbits.Top.Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821652593500036290, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: Orbits.Bottom.Radius
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821652593500036290, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821652593500036290, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2821652593500036290, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: TrackerSettings.PositionDamping.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3500214165031171805, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
       propertyPath: m_Name
       value: Spaceman Goggles
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495013943096190231, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: Lookahead.Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5495013943096190231, guid: 38286c5d96e274b8dbe0aac698d28c04, type: 3}
+      propertyPath: Composition.HardLimits.Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
