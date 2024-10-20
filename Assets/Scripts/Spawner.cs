@@ -23,7 +23,9 @@ public class Spawner : MonoBehaviour
     
     public void SpawnSphere() {
         Vector3 playerPos = FindFirstObjectByType<character>().getPos();
+
         Vector3 playerSize = FindFirstObjectByType<character>().getSize();
+
 
         int spawnPointX = Random.Range(-20, 20);
         int spawnPointY = Random.Range(-20, 30);
@@ -31,6 +33,7 @@ public class Spawner : MonoBehaviour
 
         Vector3 spawnPosition = new Vector3(spawnPointX, spawnPointY, spawnPointZ) + playerPos;
         
+
         spawnPosition += playerSize;
 
 
