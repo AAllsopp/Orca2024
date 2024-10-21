@@ -20,10 +20,10 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void restartGame(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     } 
 
     public void titleScreen(){
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 }
