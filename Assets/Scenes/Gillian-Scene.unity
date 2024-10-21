@@ -1007,6 +1007,7 @@ MonoBehaviour:
   cam_ref: {fileID: 423911065}
   cinemachineCamera: {fileID: 423911068}
   spawnerScript: {fileID: 0}
+  winmenu: {fileID: 6187253034769547598, guid: b6da94ec105034a61a08df45e39bf029, type: 3}
   time: 5
 --- !u!136 &1163393014
 CapsuleCollider:
