@@ -141,7 +141,7 @@ public class character : MonoBehaviour
                     playerSize += newSize;
                     
                     Destroy(hit.gameObject);
-                    UpdateCameraOrbit(newSize.x*5);
+                    UpdateCameraOrbit(newSize.x*3.1415f);
                     Debug.Log("Player Size: " + playerSize.x);
                     for (int i =0; i < 8; i++){
                         FindFirstObjectByType<Spawner>().SpawnSphere();
