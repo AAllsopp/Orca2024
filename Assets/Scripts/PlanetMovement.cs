@@ -7,6 +7,7 @@ public class PlanetMovement : MonoBehaviour
     int randomRotation;
     Quaternion rotation;
     Vector3 speed;
+    public float targetTime = 30.0f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,7 +24,20 @@ public class PlanetMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        targetTime -= Time.deltaTime;
         // planet.MovePosition(transform.position + (transform.forward * randomSpeed * Time.deltaTime));
         planet.AddForce(speed);
+        if(targetTime <= 0.0f){
+            changeDirection();
+            targetTime = 30.0f;
+        }
+    }
+    void changeDirection(){
+        rotation = UnityEngine.Random.rotation;
+        // for(int i = 0; i <10; i++){
+        //     FindFirstObjectByType<Spawner>().SpawnSphere();
+        // }
+        
+
     }
 }
