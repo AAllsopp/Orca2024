@@ -4,5 +4,18 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Gillian-Scene.unity
+    guid: 9d7e7e72e4a0a40f58710159de146eda
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: de02655bb672945dca03eca69bbc06a4
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: ba2f067cd64b84bf18b1c510d0f5737d
+  - enabled: 1
+    path: Assets/Scenes/YouWin.unity
+    guid: a0b9497faa3e841ac9ef394205f565df
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

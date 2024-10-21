@@ -17,7 +17,7 @@ public class RandomQuoteGen : MonoBehaviour
         "\"I have a great idea for a movie. It\'s about a bunch of guys who have no balls.\" \n\n- David Mamet",
         "\"Some people are born to lift heavy weights, some are born to juggle golden balls\" \n\n- Max Beerbohm",
         "\"AAAAAUUUUUGGGGGHHHHH\"",
-        "\"The objective is to move the opponent, not the ball. Except for when the opponent is the ball.\" Sun Tzu",
+        "\"The objective is to move the opponent, not the ball. Except for when the opponent is the ball.\" \n\n- Sun Tzu",
         "\"You\'ve got to have balls and a messed up plastic surgery face to be successful in anything.\" \n\n- Simon Cowell",
         "\"It will always be me and the balls\" \n\n- Tiger \'Infidelity\' Woods",
         "\"My armpit hairs are solid steel\" \n\n- Mark Twain",
