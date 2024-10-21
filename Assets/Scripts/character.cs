@@ -3,11 +3,12 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class character : MonoBehaviour
 {   
     private CharacterController charController;
-    public float Speed=5f;
+    public float Speed=8f;
     private bool playerGround; 
     private Vector3 playerSize = new Vector3 (1.8f,1.8f,1.8f);
     // private float rotationSpeed = 270f;
@@ -17,6 +18,7 @@ public class character : MonoBehaviour
     // public CinemachineCamera cinemachineCamera;
     public CinemachineOrbitalFollow cinemachineCamera;
     public Spawner spawnerScript;
+    public GameObject winmenu;
 
 
 
@@ -38,7 +40,9 @@ public class character : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(playerSize.x > 500){
+            SceneManager.LoadScene(3);
+        }
         Vector3 move = new Vector3(Input.GetAxis("Horizontal")*Time.deltaTime, 0, Input.GetAxis("Vertical")*Time.deltaTime);
         move = this.transform.TransformDirection(move);
         if(Input.GetKey(KeyCode.Space)){
@@ -73,8 +77,7 @@ public class character : MonoBehaviour
                     
                 }
                 else{
-                    Destroy(gameObject); // >:(
-                    
+                    SceneManager.LoadScene(2);
                 }
 
             }

@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    public GameObject gameover;
+    public GameObject mainmenu;
+    public GameObject gameplay;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,6 +20,10 @@ public class SceneLoader : MonoBehaviour
     }
 
     public void restartGame(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(0);
     } 
+
+    public void titleScreen(){
+        SceneManager.LoadScene(1);
+    }
 }
