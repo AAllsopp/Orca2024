@@ -65,7 +65,72 @@ public class character : MonoBehaviour
                 if(playerSize.x >= foodSize.x){
                     Vector3 newSize = vectorScale(foodSize, 0.1f);
                     gameObject.transform.localScale += newSize;
-                    if (playerSize.x <= 1.9999 && playerSize.x + newSize.x >= 1.9999) {
+                    if (playerSize.x <= 3 && playerSize.x + newSize.x >= 3) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }else if (playerSize.x <= 6 && playerSize.x + newSize.x >= 6) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 10 && playerSize.x + newSize.x >= 10) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 14 && playerSize.x + newSize.x >= 14) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 22 && playerSize.x + newSize.x >= 22) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 32 && playerSize.x + newSize.x >= 32) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 44 && playerSize.x + newSize.x >= 44) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <=  58 && playerSize.x + newSize.x >= 58) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if(playerSize.x <= 74 && playerSize.x + newSize.x >= 74) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 92 && playerSize.x + newSize.x >= 92) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 112 && playerSize.x + newSize.x >= 112) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }else if (playerSize.x <= 134 && playerSize.x + newSize.x >= 134) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }else if (playerSize.x <= 158 && playerSize.x + newSize.x >= 158) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 212 && playerSize.x + newSize.x >= 212) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 242 && playerSize.x + newSize.x >= 242) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 274 && playerSize.x + newSize.x >= 274) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 308 && playerSize.x + newSize.x >= 308) {
+                        FindFirstObjectByType<TextIndicator>().setText();
+                        Invoke("stopText", 5);
+                    }
+                    else if (playerSize.x <= 344 && playerSize.x + newSize.x >= 344) {
                         FindFirstObjectByType<TextIndicator>().setText();
                         Invoke("stopText", 5);
                     }
@@ -74,7 +139,7 @@ public class character : MonoBehaviour
                     Destroy(hit.gameObject);
                     UpdateCameraOrbit(newSize.x*5);
                     Debug.Log("Player Size: " + playerSize.x);
-                    for (int i =0; i <4; i++){
+                    for (int i =0; i < 8; i++){
                         FindFirstObjectByType<Spawner>().SpawnSphere();
                     }
                     
