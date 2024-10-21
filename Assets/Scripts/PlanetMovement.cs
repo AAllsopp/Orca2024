@@ -14,9 +14,9 @@ public class PlanetMovement : MonoBehaviour
         // Pick a random direction and rotation
         planet = this.GetComponent<Rigidbody>();
         rotation = UnityEngine.Random.rotation;
-        float randomSpeedx = UnityEngine.Random.Range(-0.05f, 0.05f);
-        float randomSpeedy = UnityEngine.Random.Range(-0.05f, 0.05f);
-        float randomSpeedz = UnityEngine.Random.Range(-0.05f, 0.05f);
+        float randomSpeedx = UnityEngine.Random.Range(-0.03f, 0.03f);
+        float randomSpeedy = UnityEngine.Random.Range(-0.03f, 0.03f);
+        float randomSpeedz = UnityEngine.Random.Range(-0.03f, 0.03f);
 
         speed = new Vector3(randomSpeedx, randomSpeedy, randomSpeedz);
     }
