@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class character : MonoBehaviour
 {   
     private CharacterController charController;
-    public float Speed=10f;
+    public float Speed=15f;
     private bool playerGround; 
     private Vector3 playerSize = new Vector3 (1.8f,1.8f,1.8f);
     // private float rotationSpeed = 270f;
@@ -33,8 +33,8 @@ public class character : MonoBehaviour
             FindFirstObjectByType<Spawner>().SpawnSphere();
 
         }
-        Debug.Log("Start check");
-
+        // Debug.Log("Start check");
+        Cursor.visible = false;
         
     }
 

@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneLoader : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class SceneLoader : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
