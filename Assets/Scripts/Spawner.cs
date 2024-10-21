@@ -46,7 +46,6 @@ public class Spawner : MonoBehaviour
         Instantiate(sphereToSpawn, spawnPosition, Quaternion.identity);
         Instantiate(mySphere1, spawnPosition, Quaternion.identity);
         Instantiate(mySphere1, spawnPosition, Quaternion.identity);
-        Instantiate(mySphere2, spawnPosition, Quaternion.identity);
         
 
     }
