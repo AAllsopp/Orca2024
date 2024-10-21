@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cc4d501f874c5964db4a8fa6260365aa
+timeCreated: 1433275942
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 38913
+  packageName: Vast Outer Space
+  packageVersion: 1.0
+  assetPath: Assets/Vast Outer Space/Prefabs/Particle Effects/Asteroids_Scattered_A.prefab
+  uploadId: 67260
